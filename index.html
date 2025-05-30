@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discord - Polskie Serwery</title>
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/5968/5968756.png">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #1e1f2b;
+      color: #f0f0f0;
+    }
+
+    header {
+      background-color: #23242e;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #5865f2;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    p {
+      margin-top: 10px;
+      font-size: 1rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .server-card {
+      background-color: #2c2f3f;
+      border: 1px solid #3c3f51;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(88, 101, 242, 0.3);
+      transition: transform 0.2s;
+    }
+
+    .server-card:hover {
+      transform: scale(1.01);
+    }
+
+    .server-card h2 {
+      margin-top: 0;
+      color: #ffffff;
+      font-size: 1.4rem;
+    }
+
+    .server-card p {
+      color: #d0d0d0;
+      font-size: 1rem;
+    }
+
+    .stats {
+      font-size: 0.9rem;
+      color: #a0a0a0;
+      margin-top: 8px;
+    }
+
+    .join-btn {
+      margin-top: 15px;
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #5865f2;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+      font-weight: bold;
+    }
+
+    .join-btn:hover {
+      background-color: #4752c4;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .server-card {
+        padding: 15px;
+      }
+
+      .server-card h2 {
+        font-size: 1.2rem;
+      }
+
+      .server-card p {
+        font-size: 0.95rem;
+      }
+
+      .join-btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 10px;
+      }
+
+      h1 {
+        font-size: 1.4rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Katalog Serwerów Discord</h1>
+    <p>Odkryj ciekawe społeczności i dołącz do nich jednym kliknięciem</p>
+  </header>
+
+  <div class="container" id="server-list">
+    <!-- Serwery będą wstawiane przez JS -->
+  </div>
+
+  <script>
+    const servers = [
+      {
+        name: "Community",
+        description: "Główny serwer społecznościowy – rozmowy, kanały tematyczne, zabawy.",
+        members: 300,
+        invite: "https://discord.com/invite/fCpNPGVGDY"
+      },
+      {
+        name: "Sklep Botów",
+        description: "Kupno i sprzedaż botów Discord. Pomoc, testy, rozwój botów.",
+        members: 15,
+        invite: "https://discord.gg/cPJMTsfTtb"
+      },
+      {
+        name: "Serwer Szachowy",
+        description: "Dla fanów szachów – partie, turnieje, analiza gier i dyskusje.",
+        members: 15,
+        invite: "https://discord.gg/AUCmg7SfAs"
+      }
+    ];
+
+    const listContainer = document.getElementById('server-list');
+
+    servers.forEach(server => {
+      const card = document.createElement('div');
+      card.className = 'server-card';
+      card.innerHTML = `
+        <h2>${server.name}</h2>
+        <p>${server.description}</p>
+        <div class="stats">👥 ${server.members} członków</div>
+        <a href="${server.invite}" target="_blank" class="join-btn">Dołącz</a>
+      `;
+      listContainer.appendChild(card);
+    });
+  </script>
+
+</body>
+</html>
