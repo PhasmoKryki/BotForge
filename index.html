@@ -6,12 +6,9 @@
   <title>BotForge – Boty, Hosting, Reklamy</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap');
-
-    /* Reset */
     * {
       box-sizing: border-box;
     }
-
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
@@ -19,8 +16,6 @@
       color: #f3f4f6;
       scroll-behavior: smooth;
     }
-
-    /* Sticky nav */
     nav {
       position: sticky;
       top: 0;
@@ -32,7 +27,6 @@
       z-index: 100;
       box-shadow: 0 2px 10px rgba(124, 58, 237, 0.5);
     }
-
     nav a {
       color: #ddd6fe;
       text-decoration: none;
@@ -42,31 +36,25 @@
       border-radius: 4px;
       transition: background 0.3s, color 0.3s;
     }
-
     nav a:hover, nav a.active {
       background: #a78bfa;
       color: #0f0f0f;
     }
-
     header {
       text-align: center;
       padding: 4rem 1rem 3rem;
       background: linear-gradient(180deg, #0f0f0f 0%, #7c3aed 100%);
-      /* gradient płynny */
       color: #f3f4f6;
     }
-
     header h1 {
       font-size: 3rem;
       margin: 0;
     }
-
     header p {
       font-size: 1.2rem;
       max-width: 600px;
       margin: 1rem auto 0;
     }
-
     .cta-button {
       display: inline-block;
       margin-top: 2rem;
@@ -79,36 +67,29 @@
       font-weight: bold;
       transition: background 0.3s;
     }
-
     .cta-button:hover {
       background: #c4b5fd;
     }
-
     main {
       max-width: 1200px;
       margin: 0 auto;
       padding: 2rem 1rem 4rem;
     }
-
     section {
       margin-bottom: 4rem;
     }
-
     section h2 {
       font-size: 2rem;
       margin-bottom: 2rem;
       color: #a78bfa;
       text-align: center;
     }
-
-    /* Glassmorphism cards */
     .grid {
       display: flex;
       flex-wrap: wrap;
       gap: 1.5rem;
       justify-content: center;
     }
-
     .card {
       background: rgba(31, 31, 31, 0.6);
       border-radius: 12px;
@@ -122,36 +103,30 @@
       opacity: 0;
       transform: translateY(30px);
     }
-
     .card.visible {
       opacity: 1;
       transform: translateY(0);
     }
-
     .card:hover {
       transform: translateY(-8px);
       box-shadow: 0 8px 24px rgba(168, 139, 250, 0.4);
     }
-
     .card h3 {
       margin-top: 0;
       color: #d8b4fe;
       font-size: 1.25rem;
     }
-
     .card p {
       margin: 0.5rem 0;
       color: #e5e7eb;
       min-height: 48px;
     }
-
     .card span {
       display: block;
       margin-top: 0.5rem;
       font-weight: bold;
       color: #c084fc;
     }
-
     .card a {
       display: block;
       margin-top: 1rem;
@@ -161,11 +136,9 @@
       font-weight: bold;
       user-select: none;
     }
-
     .card a:hover {
       color: #ddd6fe;
     }
-
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -173,36 +146,61 @@
       color: #9ca3af;
       font-size: 0.9rem;
     }
+.faq {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #ddd6fe;
+}
 
-    /* FAQ style */
-    .faq {
-      max-width: 700px;
-      margin: 0 auto;
-      color: #ddd6fe;
-    }
+.faq-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(168, 139, 250, 0.2);
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
 
-    .faq h3 {
-      margin-bottom: 0.5rem;
-      color: #a78bfa;
-    }
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #a78bfa;
+  transition: background 0.3s;
+}
 
-    .faq p {
-      margin-top: 0;
-      line-height: 1.6;
-      color: #e5e7eb;
-    }
+.faq-question:hover {
+  background: rgba(168, 139, 250, 0.05);
+}
 
-    /* Status online */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1rem;
+  color: #e5e7eb;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px; /* wystarczająco dużo dla większości odpowiedzi */
+  padding: 0.5rem 1rem 1rem;
+}
+
+
     .status {
       text-align: center;
       font-weight: 600;
       margin-bottom: 2rem;
       font-size: 1.1rem;
-      color: #84cc16; /* jasna zieleń */
+      color: #84cc16;
       text-shadow: 0 0 6px #84cc16aa;
     }
-
-    /* Responsive */
     @media (max-width: 600px) {
       .card {
         width: 100%;
@@ -215,11 +213,11 @@
   </style>
 </head>
 <body>
-
   <nav>
     <a href="#boty" class="nav-link">Boty</a>
     <a href="#hosting" class="nav-link">Hosting</a>
     <a href="#reklamy" class="nav-link">Płatne Reklamy</a>
+    <a href="#serwery" class="nav-link">Serwery</a>
     <a href="#faq" class="nav-link">FAQ</a>
   </nav>
 
@@ -234,84 +232,117 @@
     <section id="boty">
       <h2>Boty</h2>
       <div class="grid">
-        <div class="card">
-          <h3>Na zamówienie</h3>
-          <p>Bot na zamówienie, 3 poziomy zaawansowania</p>
-          <span>5 - 40 PLN</span>
-          <a href="https://discord.gg/vCMmYpYR" target="_blank" rel="noopener noreferrer">Zakup →</a>
-        </div>
-        <div class="card">
-          <h3>Serwerowy</h3>
-          <p>Bot stworzony do pomocy z serwerem</p>
-          <span>10 - 30 PLN</span>
-          <a href="https://discord.gg/vCMmYpYR" target="_blank" rel="noopener noreferrer">Zakup →</a>
-        </div>
-        <div class="card">
-          <h3>Moderacyjny</h3>
-          <p>Bot zawierający komendy moderacyjne</p>
-          <span>5 - 20 PLN</span>
-          <a href="https://discord.gg/vCMmYpYR" target="_blank" rel="noopener noreferrer">Zakup →</a>
-        </div>
-        <div class="card">
-          <h3>Weryfikacyjny</h3>
-          <p>Bot do weryfikacji użytkowników</p>
-          <span>5 - 10 PLN</span>
-          <a href="https://discord.gg/vCMmYpYR" target="_blank" rel="noopener noreferrer">Zakup →</a>
-        </div>
-        <div class="card">
-          <h3>4fun</h3>
-          <p>Bot do zabawy</p>
-          <span>10 PLN</span>
-          <a href="https://discord.gg/vCMmYpYR" target="_blank" rel="noopener noreferrer">Zakup →</a>
-        </div>
+        <div class="card"><h3>Na zamówienie</h3><p>Bot na zamówienie, 3 poziomy zaawansowania</p><span>5 - 40 PLN</span><a href="https://discord.gg/vCMmYpYR" target="_blank">Zakup →</a></div>
+        <div class="card"><h3>Serwerowy</h3><p>Bot stworzony do pomocy z serwerem</p><span>10 - 30 PLN</span><a href="https://discord.gg/vCMmYpYR" target="_blank">Zakup →</a></div>
+        <div class="card"><h3>Moderacyjny</h3><p>Bot zawierający komendy moderacyjne</p><span>5 - 20 PLN</span><a href="https://discord.gg/vCMmYpYR" target="_blank">Zakup →</a></div>
+        <div class="card"><h3>Weryfikacyjny</h3><p>Bot do weryfikacji użytkowników</p><span>5 - 10 PLN</span><a href="https://discord.gg/vCMmYpYR" target="_blank">Zakup →</a></div>
+        <div class="card"><h3>4fun</h3><p>Bot do zabawy</p><span>10 PLN</span><a href="https://discord.gg/vCMmYpYR" target="_blank">Zakup →</a></div>
       </div>
     </section>
 
     <section id="hosting">
       <h2>Hosting</h2>
       <div class="grid">
-        <div class="card">
-          <h3>Hosting</h3>
-          <p>Po przesłaniu nam plików bota, możemy go hostować</p>
-          <span>5 - 10 PLN</span>
-          <a href="https://discord.gg/vCMmYpYR" target="_blank" rel="noopener noreferrer">Zakup →</a>
-        </div>
+        <div class="card"><h3>Hosting</h3><p>Po przesłaniu nam plików bota, możemy go hostować</p><span>5 - 10 PLN</span><a href="https://discord.gg/vCMmYpYR" target="_blank">Zakup →</a></div>
       </div>
     </section>
 
     <section id="reklamy">
       <h2>Płatne Reklamy</h2>
       <div class="grid">
-        <div class="card">
-          <h3>Standard</h3>
-          <p>Specjalny kanał z reklamą bez pingu</p>
-          <span>5 PLN</span>
-          <a href="https://discord.gg/vCMmYpYR" target="_blank" rel="noopener noreferrer">Zakup →</a>
-        </div>
-        <div class="card">
-          <h3>Standard+</h3>
-          <p>Specjalny kanał z reklamą z pingiem @here</p>
-          <span>10 PLN</span>
-          <a href="https://discord.gg/vCMmYpYR" target="_blank" rel="noopener noreferrer">Zakup →</a>
-        </div>
-        <div class="card">
-          <h3>Premium</h3>
-          <p>Specjalny kanał z reklamą z pingiem @everyone</p>
-          <span>15 PLN</span>
-          <a href="https://discord.gg/vCMmYpYR" target="_blank" rel="noopener noreferrer">Zakup →</a>
-        </div>
+        <div class="card"><h3>Standard</h3><p>Specjalny kanał z reklamą bez pingu</p><span>5 PLN</span><a href="https://discord.gg/vCMmYpYR" target="_blank">Zakup →</a></div>
+        <div class="card"><h3>Standard+</h3><p>Specjalny kanał z reklamą z pingiem @here</p><span>10 PLN</span><a href="https://discord.gg/vCMmYpYR" target="_blank">Zakup →</a></div>
+        <div class="card"><h3>Premium</h3><p>Specjalny kanał z reklamą z pingiem @everyone</p><span>15 PLN</span><a href="https://discord.gg/vCMmYpYR" target="_blank">Zakup →</a></div>
       </div>
     </section>
 
-    <section id="faq">
-      <h2>FAQ</h2>
-      <div class="faq">
-        <h3>Jak mogę dokonać płatności?</h3>
-        <p>Przyjmujemy płatności przez PayPal. Po wybraniu usługi skontaktuj się z nami na Discordzie, aby uzyskać szczegóły.</p>
-        <h3>Czy serwer jest online 24/7?</h3>
-        <p>Tak, nasz serwer jest online 24/7, aby zapewnić ciągłość usług i wsparcie.</p>
+    <section id="serwery">
+      <h2>Serwery</h2>
+
+      <div class="grid">
+        <!-- Community -->
+        <div class="card"><h3>Community – Mały</h3><p>Podstawowy serwer społecznościowy</p><span>15 PLN</span><a href="https://discord.gg/vCMmYpYR" target="_blank">Zakup →</a></div>
+        <div class="card"><h3>Community – Średni</h3><p>Rozszerzony serwer społecznościowy</p><span>20 PLN</span><a href="https://discord.gg/vCMmYpYR" target="_blank">Zakup →</a></div>
+        <div class="card"><h3>Community – Duży</h3><p>Pełna konfiguracja dla dużych społeczności</p><span>30 PLN</span><a href="https://discord.gg/vCMmYpYR" target="_blank">Zakup →</a></div>
+      </div>
+
+      <div class="grid">
+        <!-- Ads -->
+        <div class="card"><h3>Ads – Mały</h3><p>Serwer reklamowy w wersji podstawowej</p><span>20 PLN</span><a href="https://discord.gg/vCMmYpYR" target="_blank">Zakup →</a></div>
+        <div class="card"><h3>Ads – Średni</h3><p>Reklamowy serwer ze średnim zasięgiem</p><span>25 PLN</span><a href="https://discord.gg/vCMmYpYR" target="_blank">Zakup →</a></div>
+        <div class="card"><h3>Ads – Duży</h3><p>Pełna struktura serwera reklamowego</p><span>30 PLN</span><a href="https://discord.gg/vCMmYpYR" target="_blank">Zakup →</a></div>
+      </div>
+
+      <div class="grid">
+        <!-- Sh0p -->
+        <div class="card"><h3>Sh0p – Mały</h3><p>Mały sklep Discord z prostym układem</p><span>20 PLN</span><a href="https://discord.gg/vCMmYpYR" target="_blank">Zakup →</a></div>
+        <div class="card"><h3>Sh0p – Średni</h3><p>Średni sklep z dodatkowymi kategoriami</p><span>30 PLN</span><a href="https://discord.gg/vCMmYpYR" target="_blank">Zakup →</a></div>
+        <div class="card"><h3>Sh0p – Duży</h3><p>Rozbudowany sklep z zaawansowaną strukturą</p><span>45 PLN</span><a href="https://discord.gg/vCMmYpYR" target="_blank">Zakup →</a></div>
+      </div>
+
+      <div class="grid">
+        <!-- Gaming -->
+        <div class="card"><h3>Gaming – Mały</h3><p>Serwer gamingowy dla małych społeczności</p><span>15 PLN</span><a href="https://discord.gg/vCMmYpYR" target="_blank">Zakup →</a></div>
+        <div class="card"><h3>Gaming – Średni</h3><p>Serwer gamingowy z dodatkowymi funkcjami i kanałami</p><span>25 PLN</span><a href="https://discord.gg/vCMmYpYR" target="_blank">Zakup →</a></div>
+        <div class="card"><h3>Gaming – Duży</h3><p>Pełna konfiguracja dla dużych społeczności graczy</p><span>35 PLN</span><a href="https://discord.gg/vCMmYpYR" target="_blank">Zakup →</a></div>
       </div>
     </section>
+
+<section id="faq">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <button class="faq-question">Jak mogę dokonać płatności?</button>
+      <div class="faq-answer">
+        Obsługujemy płatności przez PayPal, Paysafecard, Blik, Przelew oraz MyPaySafeCard. Szczegóły uzyskasz po kontakcie na Discordzie.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Czy hosting to opłata jednorazowa?</button>
+      <div class="faq-answer">
+        Hosting opłacany jest miesięcznie, chyba że zdecydujesz się na dłuższy okres podczas zamówienia.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Czy mogę prosić o poprawki?</button>
+      <div class="faq-answer">
+        Tak, ale tylko w przypadku oczywistego błędu z naszej strony. W innych przypadkach poprawki są dodatkowo płatne.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Czy otrzymam kod źródłowy bota?</button>
+      <div class="faq-answer">
+        Nie. Kod źródłowy nie jest udostępniany klientom.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Czy mogę otrzymać zwrot pieniędzy?</button>
+      <div class="faq-answer">
+        Nie oferujemy zwrotów, z wyjątkiem sytuacji, gdy problem wynika jednoznacznie z naszej winy.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Czy są dostępne zniżki lub rabaty?</button>
+      <div class="faq-answer">
+        Na ten moment nie oferujemy rabatów ani zniżek przy większych zakupach.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Czy oferujecie wsparcie techniczne po zakupie?</button>
+      <div class="faq-answer">
+        Nie świadczymy stałego wsparcia technicznego po sprzedaży usług.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Czy mogę otrzymać fakturę lub potwierdzenie płatności?</button>
+      <div class="faq-answer">
+        Nie wystawiamy faktur ani oficjalnych potwierdzeń płatności.
+      </div>
+    </div>
+  </div>
+</section>
+
+
   </main>
 
   <footer>
@@ -319,7 +350,6 @@
   </footer>
 
   <script>
-    // Fade-in effect on scroll for cards
     function reveal() {
       const cards = document.querySelectorAll('.card');
       const windowHeight = window.innerHeight;
@@ -330,15 +360,11 @@
         }
       });
     }
-
     window.addEventListener('scroll', reveal);
     window.addEventListener('load', () => {
       reveal();
-
-      // Nav link active switching
       const sections = document.querySelectorAll('section');
       const navLinks = document.querySelectorAll('nav a');
-
       function onScroll() {
         const scrollPos = window.scrollY + 100;
         sections.forEach((section, i) => {
@@ -351,7 +377,15 @@
       window.addEventListener('scroll', onScroll);
       onScroll();
     });
-  </script>
 
+
+    document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.parentElement;
+      item.classList.toggle('active');
+    });
+  });
+
+  </script>
 </body>
 </html>
